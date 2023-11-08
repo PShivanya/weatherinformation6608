@@ -1,13 +1,7 @@
-const apikey = "83649b437b2e6725250db986f860241d";
-
+const apikey = "cc55fef1e8fcd8dd9f6e17eaabf01946";
 const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
-
-
-
-
-
 const url = (city) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
 
@@ -24,9 +18,6 @@ function addWeatherToPage(data) {
   const temp = KtoC(data.main.temp);
   const humidity = data.main.humidity;
   const windSpeed = data.wind.speed;
-
-
-
 const ctx = document.getElementById('weather-chart').getContext('2d');
     new Chart(ctx, {
         type: 'bar',
@@ -48,10 +39,6 @@ const ctx = document.getElementById('weather-chart').getContext('2d');
             }
         }
     });
-
-
-
-
   const weather = document.createElement("div");
   weather.classList.add("weather");
 
@@ -67,11 +54,6 @@ const ctx = document.getElementById('weather-chart').getContext('2d');
         <p>Wind speed : <span>${+Math.trunc(windSpeed * 3.16)}km/h</span></p>
         </div>
     `;
-
-
-
-
-
   // cleanup
   main.innerHTML = "";
 
